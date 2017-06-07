@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html data-ng-app="AngularAuthApp">
 <head>
-
-    <meta name="keywords" content="angularjs,SPA,Single Page Application,refresh tokens,authentication,bearer token authentication,OWIN,bootstrap,bootstrap ui,tutorial,JS framework,ASP.NET WEB API 2,Taiseer Joudeh" />
-    <meta name="description" content="SPA built using angularjs,authentication is done using bearer token,back end built using Asp.net web api 2 and OWIN Framework,creatd by Taiseer Joudeh" />
-    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Website title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="description" content="Application wide description" />
+    <meta property="og:title" content="The Rock" />
+    <meta itemprop="description" content="Application wide description for Schema.org (Google+ uses this)">
     <title>AngularJS Authentication</title>
     <link href="content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="content/css/site.css" rel="stylesheet" />
@@ -21,16 +23,16 @@
                 <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
                     <span class="glyphicon glyphicon-chevron-down"></span>
                 </button>
-                <a class="navbar-brand" href="#/">Home</a>
+                <a class="navbar-brand" href="#!/">Home</a>
             </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
                 <ul class="nav navbar-nav navbar-right">
-                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
-                    <li data-ng-hide="!authentication.isAuth"><a href="#/orders">My Orders</a></li>
-                    <li data-ng-hide="!authentication.isAuth"><a href="#/refresh">Refresh Token</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#!">Welcome {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#!/orders">My Orders</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="#!/refresh">Refresh Token</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#!/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#!/signup">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -66,8 +68,8 @@
 
     <!-- 3rd party libraries -->
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
     <script src="scripts/angular-local-storage.min.js"></script>
     <script src="scripts/loading-bar.min.js"></script>
 
@@ -79,6 +81,7 @@
     <script src="app/services/authService.js?v=2"></script>
     <script src="app/services/ordersService.js?v=2"></script>
     <script src="app/services/tokensManagerService.js?v=2"></script>
+    <script src="scripts/angular-update-meta-master/dist/update-meta.min.js"></script>
     <!-- Load controllers -->
     <script src="app/controllers/indexController.js?v=2"></script>
     <script src="app/controllers/homeController.js?v=2"></script>
